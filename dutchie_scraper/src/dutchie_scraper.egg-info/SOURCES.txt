@@ -1,0 +1,11 @@
+README.md
+setup.py
+src/dutchie_scraper/__init__.py
+src/dutchie_scraper/scraper.py
+src/dutchie_scraper/utils.py
+src/dutchie_scraper.egg-info/PKG-INFO
+src/dutchie_scraper.egg-info/SOURCES.txt
+src/dutchie_scraper.egg-info/dependency_links.txt
+src/dutchie_scraper.egg-info/requires.txt
+src/dutchie_scraper.egg-info/top_level.txt
+tests/test_scraper.py

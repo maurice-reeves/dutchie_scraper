@@ -1,0 +1,6 @@
+selenium
+pandas
+flask
+flask-pymongo
+webdriver-manager
+selenium-stealth
