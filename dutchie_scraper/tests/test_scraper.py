@@ -8,6 +8,16 @@ def test_scrape_dutchie_valid_url():
     assert isinstance(result, pd.DataFrame)
     assert not result.empty
 
+def test_scrape_dutchie_valid_multiple_urls():
+    urls = [
+        "https://dutchie.com/dispensary/puff-monroe-rec/products/vaporizers",
+        "https://dutchie.com/dispensary/puff-monroe-rec/products/edibles"
+    ]
+    result = scrape_dutchie(urls)
+    assert isinstance(result, pd.DataFrame)
+    assert not result.empty
+    assert len(result) > 0
+
 def test_scrape_dutchie_invalid_url():
     url = "https://invalid-url.com"
     with pytest.raises(Exception):
