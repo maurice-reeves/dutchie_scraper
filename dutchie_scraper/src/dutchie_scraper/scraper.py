@@ -120,4 +120,4 @@ def scrape_dutchie(url_or_urls):
         else:
             return pd.DataFrame()
     else:
-        return scrape_single(url)
+        return scrape_single(url_or_urls)
