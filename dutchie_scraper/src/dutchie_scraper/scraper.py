@@ -52,7 +52,7 @@ def scrape_dutchie(url_or_urls):
 
         try:
             element = WebDriverWait(driver, 20).until(
-                EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div[3]/div[2]/div[1]/button"))
+                EC.element_to_be_clickable((By.XPATH, "/html/body/div[4]/div[3]/div[2]/div[1]/button"))
             )
             element.click()
 
