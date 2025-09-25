@@ -40,7 +40,7 @@ def scrape_dutchie(url_or_urls):
                 try:
                     request_id = log["params"]["requestId"]
                     resp_url = log["params"]["response"]["url"]
-                    if 'https://dutchie.com/api-3/graphql?operationName=FilteredProducts&variables' in resp_url:
+                    if 'operationName=FilteredProducts&variables' in resp_url:
                         urls.append(resp_url)
                         response = driver.execute_cdp_cmd(
                             "Network.getResponseBody", {"requestId": request_id}
