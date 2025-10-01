@@ -111,7 +111,7 @@ def scrape_dutchie(url_or_urls):
                 .assign(
                     Prices=flat_data["Prices"].str[0],
                     updatedAt=pd.to_datetime(flat_data["updatedAt"]),
-                    createdAt=pd.to_datetime(flat_data["createdAt"], unit="ms"),
+                    createdAt = pd.to_datetime(pd.to_numeric(flat_data["createdAt"]), unit="ms"),
                     POSMetaData_children=flat_data["POSMetaData_children"].apply(lambda x: x[0] if isinstance(x, list) and x else None),
                     scrapeDate=pd.Timestamp.now().strftime("%Y-%m-%d"),
                     url=url
@@ -160,7 +160,6 @@ def scrape_dutchie(url_or_urls):
                         print(f"{len(df)} items scraped")
                     else:
                         print(f"No data for {category}")
-
             return pd.concat(all_results, ignore_index=True) if all_results else pd.DataFrame()
 
         else:
@@ -178,7 +177,6 @@ def scrape_dutchie(url_or_urls):
                     print(f"{len(df)} items scraped")
                 else:
                     print(f"No data for {category}")
-
             return pd.concat(all_results, ignore_index=True) if all_results else pd.DataFrame()
 
     except ConnectionError as ce:
